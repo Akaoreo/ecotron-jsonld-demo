@@ -1,0 +1,1485 @@
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "https://www.w3.org/2006/time#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "qudt": "http://qudt.org/vocab/unit/",
+    "glosis": "http://w3id.org/glosis/model/",
+    "glosis_cl": "http://w3id.org/glosis/model/codelists/",
+    "iso28258": "http://w3id.org/glosis/model/iso28258/2013/",
+    "sweet": "http://sweetontology.net/",
+    "cf": "http://vocab.nerc.ac.uk/standard_name/",
+    "ecotron": "http://example.org/ecotron/",
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "madeByActuator": {
+      "@id": "sosa:madeByActuator",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
+    "actsOnProperty": {
+      "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "isSampleOf": {
+      "@id": "sosa:isSampleOf",
+      "@type": "@id"
+    },
+    "isHostedBy": {
+      "@id": "sosa:isHostedBy",
+      "@type": "@id"
+    },
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "@id"
+    },
+    "inXSDDateTime": {
+      "@id": "time:inXSDDateTime",
+      "@type": "xsd:dateTime"
+    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "unit": {
+      "@id": "qudt:unit",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "ecotron:platform/lysimeter-1",
+      "@type": "sosa:Platform",
+      "label": "Ecotron Lysimeter 1",
+      "comment": "Weighing lysimeter with active soil temperature, gas, and LBC control."
+    },
+    {
+      "@id": "ecotron:foi/soil-column",
+      "@type": [
+        "sosa:FeatureOfInterest",
+        "glosis:GL_Profile"
+      ],
+      "label": "Lysimeter soil column",
+      "comment": "Ordered soil body inside the lysimeter vessel.",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:foi/chamber-air",
+      "@type": "sosa:FeatureOfInterest",
+      "label": "Ecotron chamber air",
+      "comment": "Air volume inside the growth chamber.",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T21-1",
+      "@type": "sosa:Sample",
+      "label": "Soil at T21 tensiometer depth 1",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T21-2",
+      "@type": "sosa:Sample",
+      "label": "Soil at T21 tensiometer depth 2",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T21-3",
+      "@type": "sosa:Sample",
+      "label": "Soil at T21 tensiometer depth 3",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T21-4",
+      "@type": "sosa:Sample",
+      "label": "Soil at T21 tensiometer depth 4",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-1",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 1",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-2",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 2",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-3",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 3",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-4",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 4",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-5",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 5",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-depth-T32-6",
+      "@type": "sosa:Sample",
+      "label": "Soil at T32 tensiometer depth 6",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-pos-TP32-1",
+      "@type": "sosa:Sample",
+      "label": "Soil at TP32 capacitance probe position 1",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sample/soil-pos-TP32-2",
+      "@type": "sosa:Sample",
+      "label": "Soil at TP32 capacitance probe position 2",
+      "isSampleOf": "ecotron:foi/soil-column"
+    },
+    {
+      "@id": "ecotron:sensor/T21_1",
+      "@type": "sosa:Sensor",
+      "label": "T21 Tensiometer depth 1",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T21_2",
+      "@type": "sosa:Sensor",
+      "label": "T21 Tensiometer depth 2",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T21_3",
+      "@type": "sosa:Sensor",
+      "label": "T21 Tensiometer depth 3",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T21_4",
+      "@type": "sosa:Sensor",
+      "label": "T21 Tensiometer depth 4",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_1",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 1",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_2",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 2",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_3",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 3",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_4",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 4",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_5",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 5",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/T32_6",
+      "@type": "sosa:Sensor",
+      "label": "T32 Tensiometer depth 6",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/TP32_1",
+      "@type": "sosa:Sensor",
+      "label": "TP32 Capacitance probe position 1",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:sensor/TP32_2",
+      "@type": "sosa:Sensor",
+      "label": "TP32 Capacitance probe position 2",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:actuator/LBC-pump",
+      "@type": "sosa:Actuator",
+      "label": "LBC suction pump",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:actuator/irrigation",
+      "@type": "sosa:Actuator",
+      "label": "Irrigation system",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:actuator/LED-panel",
+      "@type": "sosa:Actuator",
+      "label": "LED light panel",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:actuator/climate-control",
+      "@type": "sosa:Actuator",
+      "label": "Chamber climate controller",
+      "isHostedBy": "ecotron:platform/lysimeter-1"
+    },
+    {
+      "@id": "ecotron:time/2026-06-25T03_36_30",
+      "@type": "time:Instant",
+      "inXSDDateTime": "2026-06-25T03:36:30"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CH4_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CH4_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/CH4_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/CH4_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CO2_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CO2_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/CO2_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 454.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:air_temperature",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 11.6,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/Temperature_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:air_temperature",
+      "hasSimpleResult": {
+        "@value": 11.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Humidity_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:relative_humidity",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 74.2,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/Humidity_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:relative_humidity",
+      "hasSimpleResult": {
+        "@value": 73.8,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_upper_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.8,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_upper_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.88,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_middle_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_middle_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 14.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_lower_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Temperature_soil_lower_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 14.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CH4_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/CH4_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/N2O_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/N2O_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/CO2_PID_SP_ppm",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/CO2_PID_PV_ppm",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 454.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Far_Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_FarRed",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Cold_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_ColdWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_Red",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/UV",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_UV",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/Warm_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_WarmWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/N2O_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_36_30/N2O_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/N2O_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_36_30/N2O_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_36_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:time/2026-06-25T03_37_00",
+      "@type": "time:Instant",
+      "inXSDDateTime": "2026-06-25T03:37:00"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CH4_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CH4_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/CH4_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/CH4_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CO2_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CO2_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/CO2_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 453.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:air_temperature",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 11.6,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/Temperature_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:air_temperature",
+      "hasSimpleResult": {
+        "@value": 11.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Humidity_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:relative_humidity",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 74.2,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/Humidity_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:relative_humidity",
+      "hasSimpleResult": {
+        "@value": 73.8,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_upper_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.79,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_upper_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_middle_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_middle_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 14.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_lower_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Temperature_soil_lower_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 14.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CH4_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/CH4_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/N2O_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/N2O_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/CO2_PID_SP_ppm",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/CO2_PID_PV_ppm",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 453.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Far_Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_FarRed",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Cold_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_ColdWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_Red",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/UV",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_UV",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/Warm_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_WarmWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/N2O_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_00/N2O_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/N2O_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_00/N2O_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_00",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:time/2026-06-25T03_37_30",
+      "@type": "time:Instant",
+      "inXSDDateTime": "2026-06-25T03:37:30"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CH4_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CH4_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/CH4_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/CH4_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CO2_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CO2_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/CO2_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 453.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:air_temperature",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 11.6,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/Temperature_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:air_temperature",
+      "hasSimpleResult": {
+        "@value": 11.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Humidity_air_PID_SP_y",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:relative_humidity",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 74.2,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/Humidity_air_PID_PV_y",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:relative_humidity",
+      "hasSimpleResult": {
+        "@value": 73.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_upper_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.78,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_upper_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureUpperZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 9.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_middle_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_middle_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureMiddleZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 13.9,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_lower_PID_SP_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 15.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Temperature_soil_lower_PID_PV_x",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/soil-column",
+      "actsOnProperty": "ecotron:property/SoilTemperatureLowerZone",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 14.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:DEG_C"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CH4_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_methane_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 3500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/CH4_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_methane_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/N2O_PID_SP_ppb",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/N2O_PID_PV_ppb",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/CO2_PID_SP_ppm",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 600.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/CO2_PID_PV_ppm",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_carbon_dioxide_in_air",
+      "hasSimpleResult": {
+        "@value": 453.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPM"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Far_Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_FarRed",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Cold_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_ColdWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Red",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_Red",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/UV",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_UV",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/Warm_White",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "ecotron:property/LightIntensity_WarmWhite",
+      "madeByActuator": "ecotron:actuator/LED-panel",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PERCENT"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/N2O_PID_OUT",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:actuation/2026-06-25T03_37_30/N2O_PID_SP",
+      "@type": "sosa:Actuation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "actsOnProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "madeByActuator": "ecotron:actuator/climate-control",
+      "hasSimpleResult": {
+        "@value": 500.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/N2O_PID_PV_Raw",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    },
+    {
+      "@id": "ecotron:observation/2026-06-25T03_37_30/N2O_PID_PV",
+      "@type": "sosa:Observation",
+      "resultTime": "ecotron:time/2026-06-25T03_37_30",
+      "hasFeatureOfInterest": "ecotron:foi/chamber-air",
+      "observedProperty": "cf:mole_fraction_of_nitrous_oxide_in_air",
+      "hasSimpleResult": {
+        "@value": 0.0,
+        "@type": "xsd:double"
+      },
+      "unit": "qudt:PPB"
+    }
+  ]
+}
